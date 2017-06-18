@@ -123,4 +123,5 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
-
+# Python module
+libs/python

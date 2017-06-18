@@ -10,6 +10,7 @@ import com.github.sufbo.extractor.result.CsvResultWriter;
 
 public class ResultWriter extends CsvResultWriter{
     private PrintWriter out;
+    // private MethodRecommender methodRecommender = new MethodRecommender();
 
     public ResultWriter(PrintWriter out){
         super(out);
@@ -19,15 +20,10 @@ public class ResultWriter extends CsvResultWriter{
     @Override
     public void visit(ClassName name, MethodInformation method, Bytecode bytecode) {
         print(name, "#", method.name());
-        print("\t->\t");
+        // print("\t->\t");
         // print(bytecode.length());
-        printRecommend(bytecode);
+        bytecode.buffer().toKGrams(2).intStream().forEach(a -> print(String.valueOf(","+a)));
         out.println();
-    }
-
-    private void printRecommend(Bytecode bytecode){
-        // print(bytecode.digest());
-        out.print(new MethodRecommender(bytecode).recommend());
     }
 
     private void print(Object... objects){

@@ -24,12 +24,10 @@ public class Main{
     }
 
     private void run() throws IOException{
-        // System.out.println(artifacts.accept());
         try(PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out))){
             ResultWriter writer = new ResultWriter(out);
             artifacts.accept(writer);
         }
-        // System.out.println(1111);
     }
 
     public static void main(String[] args) throws IOException{
