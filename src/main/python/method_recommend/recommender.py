@@ -23,9 +23,7 @@ class recommender:
         return self.__mapping_table[model.predict(np.array([predictor_variable]))[0]]
 
     def __fill_deficit(self, predictor_variable, length):
-        while len(predictor_variable) < length-1:
-            predictor_variable = np.append(predictor_variable, [-1])
-        return predictor_variable
+        return np.append(predictor_variable, ([-1] * (length-len(predictor_variable)-1)))
 
     def __check_length(self, length):
         if length < 100:

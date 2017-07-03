@@ -27,9 +27,8 @@ if __name__ == '__main__':
             objective_variable, predictor_variable = dp.parse(line.split(","))
             method = recommender.recomend(predictor_variable)
             # if not "birthmark" in method:
-                # if objective_variable.split("#")[-1][0] == method[0]:
-                #     sys.stdout.write("%s\t->\t" % objective_variable.split("#")[-1])
-                #     sys.stdout.write("%s\n" % method)
+            #     sys.stdout.write("%s," % objective_variable.split("#")[-1])
+            #     sys.stdout.write("%s\n" % method)
             sys.stdout.write("%s," % objective_variable)
             sys.stdout.write("%s\n" % method)
 
