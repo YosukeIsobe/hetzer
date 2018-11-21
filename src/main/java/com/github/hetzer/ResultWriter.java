@@ -19,10 +19,13 @@ public class ResultWriter extends CsvResultWriter{
 
     @Override
     public void visit(ClassName name, MethodInformation method, Bytecode bytecode) {
-        print(name, "#", method.name());
+        print(name, "#", method);
         // print("\t->\t");
         // print(bytecode.length());
-        bytecode.buffer().toKGrams(2).intStream().forEach(a -> print(String.valueOf(","+a)));
+        // print(",", method.descriptor());
+        print(",", bytecode.toString());
+        // bytecode.buffer().toKGrams(2).intStream().forEach(a -> print(String.valueOf(","+a)));
+        // print(",", method.start(), ",", method.end());
         out.println();
     }
 
@@ -33,5 +36,6 @@ public class ResultWriter extends CsvResultWriter{
 
     private void print(String value){
         out.print(value);
+        // out.print(",");
     }
 }
