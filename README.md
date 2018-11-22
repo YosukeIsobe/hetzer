@@ -9,6 +9,7 @@ Javaのプログラムに対して，メソッド名の動詞の逆難読化を�
 
 ## Requirement
 * [sufbo](https://github.com/tamada/sufbo)
+* WordNet
 * Python 2.7
 * Gradle
 * pip
