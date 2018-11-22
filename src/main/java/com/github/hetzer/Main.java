@@ -11,8 +11,6 @@ import com.github.sufbo.entities.maven.Ids;
 import com.github.sufbo.entities.maven.Artifact;
 import com.github.sufbo.entities.maven.Artifacts;
 
-// import com.github.hetzer.ArtifactStreamBuilder;
-
 public class Main{
     private Artifacts artifacts;
     private Ids ids = new DummyIds().create();

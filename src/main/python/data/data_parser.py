@@ -6,7 +6,7 @@ from data_maker import Maker
 from arg_retval_counter import Counter
 
 class Parser:
-    def parse(self, method_name, arg_retval, opcodes):
+    def parse(self, method_name, arg_retval, visibility, opcodes): # not use visibility
         maker = Maker()
         counter = Counter()
         args, retval = counter.count(arg_retval)

@@ -29,10 +29,6 @@ def write_results(recommender, jar, lower, upper):
     for line in get_lines(cmd="java -jar build/libs/hetzer.jar %s" % jar):
         target, predictor_variable = parser.parse(*line.split(","))
         method = recommender.recomend(predictor_variable)
-        # if not "birthmark" in method:
-        #     sys.stdout.write("%s," % objective_variable.split("#")[-1])
-        #     sys.stdout.write("%s\n" % method)
-            # sys.stdout.write("%s,%d,%d\n" % (method, len(predictor_variable), (end-start)))
         sys.stdout.write("%s," % target)
         sys.stdout.write("%s\n" % method)
 
